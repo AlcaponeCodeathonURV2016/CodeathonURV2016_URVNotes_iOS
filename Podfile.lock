@@ -1,0 +1,14 @@
+PODS:
+  - DKImagePickerController (3.0.10):
+    - DKImagePickerController/Camera (= 3.0.10)
+    - DKImagePickerController/ImageManager (= 3.0.10)
+  - DKImagePickerController/Camera (3.0.10)
+  - DKImagePickerController/ImageManager (3.0.10)
+
+DEPENDENCIES:
+  - DKImagePickerController
+
+SPEC CHECKSUMS:
+  DKImagePickerController: d95106cdabfb8661e7378bfaab1dd26fdf1ece31
+
+COCOAPODS: 0.39.0

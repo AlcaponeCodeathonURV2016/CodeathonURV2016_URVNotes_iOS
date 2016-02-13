@@ -11,17 +11,22 @@ import UIKit
 class ConfiguracioTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var profileUserImage: UIImageView!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnamesTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-
+    @IBOutlet weak var grauTextField: UITextField!
+    @IBOutlet weak var assignaturesTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         profileUserImage.layer.cornerRadius = profileUserImage.frame.size.width * 0.5;
         
-        self.nameTextField.delegate = self;
-        self.surnamesTextField.delegate = self;
-        self.emailTextField.delegate = self;
+        self.nameTextField.delegate = self
+        self.surnamesTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.grauTextField.delegate = self
+        self.assignaturesTextField.delegate = self
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

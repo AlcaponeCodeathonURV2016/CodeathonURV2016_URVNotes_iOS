@@ -7,21 +7,33 @@
 //
 
 import UIKit
+import DKImagePickerController
 
 class AfegirApuntViewController: UIViewController {
 
+    let pickerController = DKImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+            print("didSelectAssets")
+            print(assets)
+        }
 
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
 
+    @IBAction func pickImageAction(sender: AnyObject) {
+        self.presentViewController(pickerController, animated: true) {}
+    }
+    
     /*
     // MARK: - Navigation
 
