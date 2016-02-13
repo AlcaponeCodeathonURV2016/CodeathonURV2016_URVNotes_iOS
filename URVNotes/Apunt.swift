@@ -18,6 +18,7 @@ class Apunt: Object {
     dynamic var dislikes = 0
     dynamic var data = NSDate()
     
+    let imatges = List<ApuntImatge>()
     let comentaris = List<Comentari>()
     // Specify properties to ignore (Realm won't persist these)
     
