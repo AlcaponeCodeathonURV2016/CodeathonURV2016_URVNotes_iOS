@@ -13,7 +13,7 @@ class ApuntImatge: Object {
     dynamic var id = ""
     dynamic var apunt: Apunt?
     dynamic var position = 0
-    dynamic var nsurlfilemanager = ""
+    dynamic var data = NSData()
     dynamic var local = false
 // Specify properties to ignore (Realm won't persist these)
     

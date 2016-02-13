@@ -173,16 +173,22 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
             "dislikes": 0,
             "data": NSDate()])
         
-        self.imatges.
         
         var count = 0
         for imatge: DKAsset in self.imatges {
-            let apunt = ApuntImatge(value: ["id":NSUUID().UUIDString,
-                "apunt":apunt,
-                "position":count,
-                "nsurlfilemanager":"",
-                "local": true])
-            count++
+            imatge.fetchFullScreenImageWithCompleteBlock({ image, info in
+                let imageData: NSData = UIImagePNGRepresentation(image!)!
+                let apuntImatge = ApuntImatge(value: ["id":NSUUID().UUIDString,
+                    "apunt":apunt,
+                    "position":count,
+                    "data":imageData,
+                    "local": true])
+                
+                try! realm.write {
+                    realm.add(apuntImatge)
+                    count++
+                }
+            })
         }
 
         
