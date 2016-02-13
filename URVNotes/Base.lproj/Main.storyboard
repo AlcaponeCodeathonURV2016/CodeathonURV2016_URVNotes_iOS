@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Apunt View Controller-->
-        <scene sceneID="DXN-xM-rr0">
-            <objects>
-                <viewController id="PRC-Ae-Sdo" customClass="ApuntViewController" customModule="URVNotes" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3CQ-XA-Scd"/>
-                        <viewControllerLayoutGuide type="bottom" id="K1w-kW-vYa"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Nhc-im-BKn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="nIR-7O-aXm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sT0-Rj-iG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="370" y="-822"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -318,12 +299,40 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Els meus apunts" id="o7r-Uu-w2K"/>
                     <connections>
-                        <segue destination="PRC-Ae-Sdo" kind="push" id="MY9-Vn-NG2"/>
+                        <segue destination="nGC-BY-kSj" kind="custom" id="KDS-T5-l6f"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxS-2U-kMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-140" y="-830"/>
+        </scene>
+        <!--Apunt Table View Controller-->
+        <scene sceneID="9id-EF-wap">
+            <objects>
+                <tableViewController id="nGC-BY-kSj" customClass="ApuntTableViewController" customModule="URVNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="CPg-mx-78P">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vMt-2m-Goh">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vMt-2m-Goh" id="ZY5-ab-kSS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nGC-BY-kSj" id="yUS-Hc-Apf"/>
+                            <outlet property="delegate" destination="nGC-BY-kSj" id="Txb-QJ-OS5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFp-uF-ati" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-822"/>
         </scene>
         <!--Afegir apunts-->
         <scene sceneID="19c-uB-NAQ">
@@ -347,7 +356,7 @@
         <!--Afegir apunts-->
         <scene sceneID="B77-X2-r1j">
             <objects>
-                <tableViewController id="CvW-Vk-f0h" sceneMemberID="viewController">
+                <tableViewController id="CvW-Vk-f0h" customClass="AfegirApuntTableViewController" customModule="URVNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="DfR-uk-isD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -355,7 +364,7 @@
                         <sections>
                             <tableViewSection headerTitle="títol" id="KU7-6A-uUa">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="AFy-Fm-Qz2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="AFy-Fm-Qz2">
                                         <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AFy-Fm-Qz2" id="Ona-rO-wUp">
@@ -406,7 +415,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="assignatura" id="Hyg-ua-ZFd">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oyk-xt-ddG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oyk-xt-ddG">
                                         <rect key="frame" x="0.0" y="400" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oyk-xt-ddG" id="iM4-EV-fs5">
@@ -431,12 +440,25 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="imatges" id="cVP-YY-anq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="qPF-l2-QDP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="qPF-l2-QDP">
                                         <rect key="frame" x="0.0" y="495" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qPF-l2-QDP" id="0Ho-jf-IrT">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-pv-ayn">
+                                                    <rect key="frame" x="110" y="7" width="100" height="30"/>
+                                                    <state key="normal" title="Afegir Imatges"/>
+                                                    <connections>
+                                                        <action selector="pickImageAction:" destination="CvW-Vk-f0h" eventType="touchUpInside" id="hBW-v5-fgd"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ckA-pv-ayn" firstAttribute="centerY" secondItem="0Ho-jf-IrT" secondAttribute="centerY" id="21B-0y-mjF"/>
+                                                <constraint firstItem="ckA-pv-ayn" firstAttribute="centerX" secondItem="0Ho-jf-IrT" secondAttribute="centerX" id="shx-JN-vjc"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -448,6 +470,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Afegir apunts" id="YKd-CJ-jJC"/>
+                    <connections>
+                        <outlet property="assignaturaTextField" destination="cxM-Vj-6oq" id="sra-HA-x9B"/>
+                        <outlet property="descriptionTextArea" destination="wNW-1U-53p" id="IbZ-sC-ADc"/>
+                        <outlet property="titleTextField" destination="bnm-Yu-1to" id="I7D-hJ-qNd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3w-fF-yX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

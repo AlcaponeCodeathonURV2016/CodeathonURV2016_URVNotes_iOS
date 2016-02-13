@@ -18,9 +18,9 @@
 		5F5CCD811C6F479D002E08D7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7E1C6F479D002E08D7 /* Realm.framework */; };
 		5F5CCD821C6F479D002E08D7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7E1C6F479D002E08D7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F5CCD861C6F4EA9002E08D7 /* ApuntsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD851C6F4EA9002E08D7 /* ApuntsListTableViewController.swift */; };
-		5F5CCD881C6F4EC5002E08D7 /* AfegirApuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD871C6F4EC5002E08D7 /* AfegirApuntViewController.swift */; };
 		5F5CCD8A1C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD891C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift */; };
-		5F5CCD8C1C6F4EFD002E08D7 /* ApuntViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD8B1C6F4EFD002E08D7 /* ApuntViewController.swift */; };
+		5FF0C9521C6F745D0042A750 /* AfegirApuntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0C9511C6F745D0042A750 /* AfegirApuntTableViewController.swift */; };
+		5FF0C9541C6F758B0042A750 /* ApuntTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF0C9531C6F758B0042A750 /* ApuntTableViewController.swift */; };
 		A53A42BBB147938CC015202A /* Pods_URVNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ACCA7BFEDF0BA5FB8598983 /* Pods_URVNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,9 +52,9 @@
 		5F5CCD7D1C6F479D002E08D7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
 		5F5CCD7E1C6F479D002E08D7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		5F5CCD851C6F4EA9002E08D7 /* ApuntsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApuntsListTableViewController.swift; sourceTree = "<group>"; };
-		5F5CCD871C6F4EC5002E08D7 /* AfegirApuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfegirApuntViewController.swift; sourceTree = "<group>"; };
 		5F5CCD891C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguracioTableViewController.swift; sourceTree = "<group>"; };
-		5F5CCD8B1C6F4EFD002E08D7 /* ApuntViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApuntViewController.swift; sourceTree = "<group>"; };
+		5FF0C9511C6F745D0042A750 /* AfegirApuntTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AfegirApuntTableViewController.swift; sourceTree = "<group>"; };
+		5FF0C9531C6F758B0042A750 /* ApuntTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApuntTableViewController.swift; sourceTree = "<group>"; };
 		60BA65DD55FD08FF4A9386EF /* Pods-URVNotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URVNotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-URVNotes/Pods-URVNotes.release.xcconfig"; sourceTree = "<group>"; };
 		B46017F67237591C4ECF9DC3 /* Pods-URVNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URVNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-URVNotes/Pods-URVNotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,9 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				5F5CCD851C6F4EA9002E08D7 /* ApuntsListTableViewController.swift */,
-				5F5CCD871C6F4EC5002E08D7 /* AfegirApuntViewController.swift */,
 				5F5CCD891C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift */,
-				5F5CCD8B1C6F4EFD002E08D7 /* ApuntViewController.swift */,
+				5FF0C9511C6F745D0042A750 /* AfegirApuntTableViewController.swift */,
+				5FF0C9531C6F758B0042A750 /* ApuntTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -263,10 +263,10 @@
 				5F5CCD861C6F4EA9002E08D7 /* ApuntsListTableViewController.swift in Sources */,
 				5F5CCD6A1C6F46B9002E08D7 /* SecondViewController.swift in Sources */,
 				5F5CCD8A1C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift in Sources */,
-				5F5CCD8C1C6F4EFD002E08D7 /* ApuntViewController.swift in Sources */,
-				5F5CCD881C6F4EC5002E08D7 /* AfegirApuntViewController.swift in Sources */,
 				5F5CCD661C6F46B9002E08D7 /* AppDelegate.swift in Sources */,
+				5FF0C9521C6F745D0042A750 /* AfegirApuntTableViewController.swift in Sources */,
 				5F5CCD681C6F46B9002E08D7 /* FirstViewController.swift in Sources */,
+				5FF0C9541C6F758B0042A750 /* ApuntTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
