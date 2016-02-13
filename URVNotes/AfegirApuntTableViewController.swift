@@ -186,6 +186,7 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
                 
                 try! realm.write {
                     realm.add(apuntImatge)
+                    apunt.imatges.append(apuntImatge)
                     count++
                 }
             })

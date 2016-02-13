@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Realm
 
 class ApuntsListTableViewController: UITableViewController {
-
+    var apunts = realm.objects(Apunt)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +19,9 @@ class ApuntsListTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        apunts = realm.objects(Apunt)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +33,26 @@ class ApuntsListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.apunts.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("apuntTableViewCell", forIndexPath: indexPath) as! ApuntTableViewCell
 
-        // Configure the cell...
+        let apunt = apunts[indexPath.row]
+        cell.nameLabel.text = apunt.titol
+        cell.authorNameLabel.text = apunt.propietari?.nom
+        cell.likesCounterLabel.text = String(apunt.likes)
+        cell.dislikesCounterLabel.text = String(apunt.dislikes)
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

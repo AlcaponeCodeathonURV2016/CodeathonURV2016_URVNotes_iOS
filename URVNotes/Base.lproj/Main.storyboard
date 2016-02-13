@@ -238,19 +238,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="UNb-J6-Klm">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="apuntTableViewCell" rowHeight="70" id="UNb-J6-Klm" customClass="ApuntTableViewCell" customModule="URVNotes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UNb-J6-Klm" id="psB-Ke-iDT">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsz-jh-vEH">
-                                            <rect key="frame" x="20" y="8" width="280" height="22"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIW-WD-Nxk">
                                             <rect key="frame" x="20" y="37" width="38" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -275,6 +269,12 @@
                                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vsz-jh-vEH">
+                                            <rect key="frame" x="20" y="8" width="280" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ekQ-Z7-2GG" secondAttribute="bottom" constant="13" id="7MZ-a0-aee"/>
@@ -291,6 +291,12 @@
                                         <constraint firstItem="Vsz-jh-vEH" firstAttribute="leading" secondItem="psB-Ke-iDT" secondAttribute="leading" constant="20" id="ydr-mQ-cSp"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="authorNameLabel" destination="OIW-WD-Nxk" id="DXe-xh-QgA"/>
+                                    <outlet property="dislikesCounterLabel" destination="ekQ-Z7-2GG" id="9hv-DA-rBb"/>
+                                    <outlet property="likesCounterLabel" destination="LLT-cO-DMf" id="JwN-bs-Y3k"/>
+                                    <outlet property="nameLabel" destination="Vsz-jh-vEH" id="QjD-4R-kyo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -401,7 +407,7 @@
                                                     <rect key="frame" x="8" y="0.0" width="304" height="139"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                 </textView>
                                             </subviews>
                                             <constraints>
