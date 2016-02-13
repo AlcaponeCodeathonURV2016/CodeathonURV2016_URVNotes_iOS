@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("firstLaunch")
+        if firstLaunch  {
+            print("Not first launch.")
+            DataHelper.seed()
+        } else {
+            print("First launch, making seed")
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstLaunch")
+        }
+        print(UIDevice.currentDevice().identifierForVendor!.UUIDString)
+        print(Realm.Configuration.defaultConfiguration.path!)
         return true
     }
 

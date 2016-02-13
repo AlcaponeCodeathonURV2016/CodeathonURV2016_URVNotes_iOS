@@ -12,7 +12,9 @@ import RealmSwift
 class Usuari: Object {
     dynamic var nom = ""
     dynamic var cognoms = ""
-
+    dynamic var email = ""
+    
+    let graus = List<Grau>()
     let apunts = List<Apunt>()
     let comentaris = List<Comentari>()
 // Specify properties to ignore (Realm won't persist these)
