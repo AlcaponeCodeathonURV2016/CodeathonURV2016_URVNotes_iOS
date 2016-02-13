@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C476FA91C6F788300978A03 /* Apunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA21C6F788300978A03 /* Apunt.swift */; };
+		0C476FAA1C6F788300978A03 /* ApuntImatge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA31C6F788300978A03 /* ApuntImatge.swift */; };
+		0C476FAB1C6F788300978A03 /* Assignatura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA41C6F788300978A03 /* Assignatura.swift */; };
+		0C476FAC1C6F788300978A03 /* Comentari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA51C6F788300978A03 /* Comentari.swift */; };
+		0C476FAD1C6F788300978A03 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA61C6F788300978A03 /* DataHelper.swift */; };
+		0C476FAE1C6F788300978A03 /* Grau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA71C6F788300978A03 /* Grau.swift */; };
+		0C476FAF1C6F788300978A03 /* Usuari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476FA81C6F788300978A03 /* Usuari.swift */; };
 		5F5CCD661C6F46B9002E08D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */; };
-		5F5CCD681C6F46B9002E08D7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */; };
-		5F5CCD6A1C6F46B9002E08D7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD691C6F46B9002E08D7 /* SecondViewController.swift */; };
 		5F5CCD6D1C6F46B9002E08D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD6B1C6F46B9002E08D7 /* Main.storyboard */; };
 		5F5CCD6F1C6F46B9002E08D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */; };
 		5F5CCD721C6F46B9002E08D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD701C6F46B9002E08D7 /* LaunchScreen.storyboard */; };
@@ -40,11 +45,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C476FA21C6F788300978A03 /* Apunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apunt.swift; sourceTree = "<group>"; };
+		0C476FA31C6F788300978A03 /* ApuntImatge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApuntImatge.swift; sourceTree = "<group>"; };
+		0C476FA41C6F788300978A03 /* Assignatura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignatura.swift; sourceTree = "<group>"; };
+		0C476FA51C6F788300978A03 /* Comentari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comentari.swift; sourceTree = "<group>"; };
+		0C476FA61C6F788300978A03 /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		0C476FA71C6F788300978A03 /* Grau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grau.swift; sourceTree = "<group>"; };
+		0C476FA81C6F788300978A03 /* Usuari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuari.swift; sourceTree = "<group>"; };
 		1ACCA7BFEDF0BA5FB8598983 /* Pods_URVNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URVNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5CCD621C6F46B9002E08D7 /* URVNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URVNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5F5CCD691C6F46B9002E08D7 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5F5CCD6C1C6F46B9002E08D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F5CCD711C6F46B9002E08D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,6 +83,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C476FB01C6F789900978A03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C476FA21C6F788300978A03 /* Apunt.swift */,
+				0C476FA31C6F788300978A03 /* ApuntImatge.swift */,
+				0C476FA41C6F788300978A03 /* Assignatura.swift */,
+				0C476FA51C6F788300978A03 /* Comentari.swift */,
+				0C476FA71C6F788300978A03 /* Grau.swift */,
+				0C476FA81C6F788300978A03 /* Usuari.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5F5CCD591C6F46B9002E08D7 = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +121,9 @@
 			children = (
 				5F5CCD841C6F4E8A002E08D7 /* ViewController */,
 				5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */,
-				5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */,
-				5F5CCD691C6F46B9002E08D7 /* SecondViewController.swift */,
 				5F5CCD6B1C6F46B9002E08D7 /* Main.storyboard */,
+				0C476FB01C6F789900978A03 /* Model */,
+				0C476FA61C6F788300978A03 /* DataHelper.swift */,
 				5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */,
 				5F5CCD701C6F46B9002E08D7 /* LaunchScreen.storyboard */,
 				5F5CCD731C6F46B9002E08D7 /* Info.plist */,
@@ -261,11 +284,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F5CCD861C6F4EA9002E08D7 /* ApuntsListTableViewController.swift in Sources */,
-				5F5CCD6A1C6F46B9002E08D7 /* SecondViewController.swift in Sources */,
 				5F5CCD8A1C6F4ED5002E08D7 /* ConfiguracioTableViewController.swift in Sources */,
+				0C476FAA1C6F788300978A03 /* ApuntImatge.swift in Sources */,
 				5F5CCD661C6F46B9002E08D7 /* AppDelegate.swift in Sources */,
+				0C476FAE1C6F788300978A03 /* Grau.swift in Sources */,
+				0C476FAC1C6F788300978A03 /* Comentari.swift in Sources */,
 				5FF0C9521C6F745D0042A750 /* AfegirApuntTableViewController.swift in Sources */,
-				5F5CCD681C6F46B9002E08D7 /* FirstViewController.swift in Sources */,
+				0C476FAF1C6F788300978A03 /* Usuari.swift in Sources */,
+				0C476FAB1C6F788300978A03 /* Assignatura.swift in Sources */,
+				0C476FAD1C6F788300978A03 /* DataHelper.swift in Sources */,
+				0C476FA91C6F788300978A03 /* Apunt.swift in Sources */,
 				5FF0C9541C6F758B0042A750 /* ApuntTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
