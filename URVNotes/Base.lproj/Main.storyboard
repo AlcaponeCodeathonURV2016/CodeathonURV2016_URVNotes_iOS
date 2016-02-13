@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Tab Bar Controller-->
@@ -463,6 +464,61 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="186" id="fgR-wi-BJq">
+                                        <rect key="frame" x="0.0" y="535.5" width="320" height="186"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fgR-wi-BJq" id="qf1-tQ-iZk">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="185.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" tag="120" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gVF-yl-1e7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="185.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Ya-xa-0yg">
+                                                        <size key="itemSize" width="80" height="80"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="apuntImatgeCell" id="GLq-dN-wxp" customClass="ImatgeApuntCollectionViewCell" customModule="URVNotes" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="clO-nZ-Iqz">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                                    </imageView>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="clO-nZ-Iqz" secondAttribute="bottom" id="1V2-dv-SaH"/>
+                                                                <constraint firstAttribute="trailing" secondItem="clO-nZ-Iqz" secondAttribute="trailing" id="CoC-iI-wg3"/>
+                                                                <constraint firstItem="clO-nZ-Iqz" firstAttribute="top" secondItem="GLq-dN-wxp" secondAttribute="top" id="UcO-Jv-nXq"/>
+                                                                <constraint firstItem="clO-nZ-Iqz" firstAttribute="leading" secondItem="GLq-dN-wxp" secondAttribute="leading" id="acp-Y0-MFB"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="imageView" destination="clO-nZ-Iqz" id="zHW-WP-jgb"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="CvW-Vk-f0h" id="I66-qh-AeY"/>
+                                                        <outlet property="delegate" destination="CvW-Vk-f0h" id="904-30-SVG"/>
+                                                    </connections>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="gVF-yl-1e7" secondAttribute="trailing" constant="-8" id="Fku-Zx-erm"/>
+                                                <constraint firstItem="gVF-yl-1e7" firstAttribute="leading" secondItem="qf1-tQ-iZk" secondAttribute="leadingMargin" constant="-8" id="V14-Ys-evT"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="gVF-yl-1e7" secondAttribute="bottom" constant="-8" id="ctW-4H-qSE"/>
+                                                <constraint firstItem="gVF-yl-1e7" firstAttribute="top" secondItem="qf1-tQ-iZk" secondAttribute="topMargin" constant="-8" id="yub-jK-L9Q"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -471,6 +527,7 @@
                             <outlet property="delegate" destination="CvW-Vk-f0h" id="345-ph-D7n"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Afegir apunts" id="YKd-CJ-jJC">
                         <barButtonItem key="rightBarButtonItem" title="Publicar" style="done" id="RSc-WB-4bd">
                             <connections>
@@ -478,8 +535,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="assignaturaTextField" destination="cxM-Vj-6oq" id="sra-HA-x9B"/>
+                        <outlet property="collectionViewImatges" destination="gVF-yl-1e7" id="Uc9-jT-Fuv"/>
                         <outlet property="descriptionTextArea" destination="wNW-1U-53p" id="IbZ-sC-ADc"/>
                         <outlet property="titleTextField" destination="bnm-Yu-1to" id="I7D-hJ-qNd"/>
                     </connections>

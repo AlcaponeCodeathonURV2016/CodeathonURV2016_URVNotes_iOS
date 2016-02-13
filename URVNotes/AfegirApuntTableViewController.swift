@@ -9,13 +9,14 @@
 import UIKit
 import DKImagePickerController
 
-class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate {
+class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate , UICollectionViewDataSource, UICollectionViewDelegate{
 
     let pickerController = DKImagePickerController()
-
+    var imatges = [DKAsset]()
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var assignaturaTextField: UITextField!
     @IBOutlet weak var descriptionTextArea: UITextView!
+    @IBOutlet weak var collectionViewImatges: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,14 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
         self.assignaturaTextField.delegate = self
         
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
-            print("didSelectAssets")
-            print(assets)
+            self.imatges = assets
+            if(self.imatges.count == 0) {
+                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))!.hidden = true
+            }else{
+                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))!.hidden = false
+            }
+            self.collectionViewImatges.reloadData()
+            self.tableView.reloadData()
         }
 
         // Uncomment the following line to preserve selection between presentations
@@ -115,6 +122,41 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 1 && indexPath.section == 1 {
+            let screenSize: CGRect = UIScreen.mainScreen().bounds
+            let height = Int(ceil(Double(self.imatges.count)/4.0))*(Int(screenSize.width)/4)
+            return CGFloat(height)
+        }
+        return 44.0
+    }
+    
+    // MARK: - Collection View
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.imatges.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("apuntImatgeCell", forIndexPath: indexPath) as! ImatgeApuntCollectionViewCell
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        self.imatges[indexPath.item].fetchImageWithSize(layout.itemSize.toPixel(), completeBlock: { image, info in
+            cell.imageView.image = image
+        })
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        return CGSize(width: (screenSize.width/4-1), height: (screenSize.width/4-1));
+        
+    }
+    
     @IBAction func publicate(sender: AnyObject) {
         
     }
