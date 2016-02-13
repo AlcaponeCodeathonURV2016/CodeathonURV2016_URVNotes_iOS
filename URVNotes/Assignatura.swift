@@ -10,6 +10,8 @@ import Foundation
 import RealmSwift
 
 class Assignatura: Object {
+    dynamic var id = ""
+    dynamic var tag = ""
     dynamic var grau: Grau?
     dynamic var nom = ""
     let apunts = List<Apunt>()

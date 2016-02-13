@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 
+var current_user = Usuari()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -19,10 +21,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let firstLaunch = NSUserDefaults.standardUserDefaults().boolForKey("firstLaunch")
         if firstLaunch  {
             print("Not first launch.")
-            DataHelper.seed()
+            current_user = realm.objects(Usuari).filter("id = %@", NSUserDefaults.standardUserDefaults().stringForKey("currentUserId")!)[0]
         } else {
             print("First launch, making seed")
             NSUserDefaults.standardUserDefaults().setBool(true, forKey: "firstLaunch")
+            DataHelper.seed()
         }
         print(Realm.Configuration.defaultConfiguration.path!)
         return true

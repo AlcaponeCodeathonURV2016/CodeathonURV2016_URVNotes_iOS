@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Apunt: Object {
+    dynamic var id = ""
     dynamic var propietari: Usuari?
     dynamic var assignatura: Assignatura?
     dynamic var titol = ""

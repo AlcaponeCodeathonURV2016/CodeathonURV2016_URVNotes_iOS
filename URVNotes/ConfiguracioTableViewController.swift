@@ -27,12 +27,43 @@ class ConfiguracioTableViewController: UITableViewController, UITextFieldDelegat
         self.emailTextField.delegate = self
         self.grauTextField.delegate = self
         self.assignaturesTextField.delegate = self
-
+        
+        self.nameTextField.text = current_user.nom
+        self.surnamesTextField.text = current_user.cognoms
+        self.emailTextField.text = current_user.email
+        
+        self.nameTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.surnamesTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.emailTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.grauTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        self.assignaturesTextField.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func textFieldDidChange(textField: UITextField) {
+        switch textField.tag {
+        case 0:
+            try! realm.write {
+                current_user.nom = textField.text!
+            }
+            
+        case 1:
+            try! realm.write {
+                current_user.cognoms = textField.text!
+            }
+
+        case 2:
+            try! realm.write {
+                current_user.email = textField.text!
+            }
+            
+//        case 3: current_user.graus = textField.text!
+        default: break
+        }       
     }
 
     override func didReceiveMemoryWarning() {

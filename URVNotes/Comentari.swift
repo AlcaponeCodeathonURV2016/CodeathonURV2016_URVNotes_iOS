@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Comentari: Object {
+    dynamic var id = ""
     dynamic var owner: Usuari?
     dynamic var apunt: Apunt?
     dynamic var value = ""

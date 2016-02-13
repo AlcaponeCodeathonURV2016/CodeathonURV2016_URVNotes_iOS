@@ -10,7 +10,9 @@ import Foundation
 import RealmSwift
 
 class Grau: Object {
+    dynamic var id = ""
     dynamic var nom = ""
+    dynamic var tag = ""
     let assignatures = List<Assignatura>()
 
 // Specify properties to ignore (Realm won't persist these)

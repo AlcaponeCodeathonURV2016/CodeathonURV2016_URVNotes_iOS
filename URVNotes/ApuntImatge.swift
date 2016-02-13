@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class ApuntImatge: Object {
+    dynamic var id = ""
     dynamic var apunt: Apunt?
     dynamic var position = 0
     dynamic var nsurlfilemanager = ""

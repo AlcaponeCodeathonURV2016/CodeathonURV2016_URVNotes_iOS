@@ -115,5 +115,8 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func publicate(sender: AnyObject) {
+        
+    }
 
 }
