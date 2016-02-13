@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CC482491C6F49B2000DCEDC /* Apunt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC482481C6F49B2000DCEDC /* Apunt.swift */; };
+		0CC4824C1C6F4A7F000DCEDC /* Comentari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4824B1C6F4A7F000DCEDC /* Comentari.swift */; };
+		0CC4824E1C6F4D17000DCEDC /* Usuari.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4824D1C6F4D17000DCEDC /* Usuari.swift */; };
+		0CC482501C6F4D33000DCEDC /* Assignatura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC4824F1C6F4D33000DCEDC /* Assignatura.swift */; };
+		0CC482521C6F4DFA000DCEDC /* Grau.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CC482511C6F4DFA000DCEDC /* Grau.swift */; };
 		5F5CCD661C6F46B9002E08D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */; };
 		5F5CCD681C6F46B9002E08D7 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */; };
 		5F5CCD6A1C6F46B9002E08D7 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5CCD691C6F46B9002E08D7 /* SecondViewController.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0CC482481C6F49B2000DCEDC /* Apunt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Apunt.swift; sourceTree = "<group>"; };
+		0CC4824B1C6F4A7F000DCEDC /* Comentari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comentari.swift; sourceTree = "<group>"; };
+		0CC4824D1C6F4D17000DCEDC /* Usuari.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Usuari.swift; sourceTree = "<group>"; };
+		0CC4824F1C6F4D33000DCEDC /* Assignatura.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignatura.swift; sourceTree = "<group>"; };
+		0CC482511C6F4DFA000DCEDC /* Grau.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grau.swift; sourceTree = "<group>"; };
 		5F5CCD621C6F46B9002E08D7 /* URVNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URVNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +70,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0CC4824A1C6F49C6000DCEDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CC482481C6F49B2000DCEDC /* Apunt.swift */,
+				0CC4824B1C6F4A7F000DCEDC /* Comentari.swift */,
+				0CC4824D1C6F4D17000DCEDC /* Usuari.swift */,
+				0CC4824F1C6F4D33000DCEDC /* Assignatura.swift */,
+				0CC482511C6F4DFA000DCEDC /* Grau.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		5F5CCD591C6F46B9002E08D7 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,7 @@
 				5F5CCD671C6F46B9002E08D7 /* FirstViewController.swift */,
 				5F5CCD691C6F46B9002E08D7 /* SecondViewController.swift */,
 				5F5CCD6B1C6F46B9002E08D7 /* Main.storyboard */,
+				0CC4824A1C6F49C6000DCEDC /* Model */,
 				5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */,
 				5F5CCD701C6F46B9002E08D7 /* LaunchScreen.storyboard */,
 				5F5CCD731C6F46B9002E08D7 /* Info.plist */,
@@ -167,7 +190,12 @@
 			files = (
 				5F5CCD6A1C6F46B9002E08D7 /* SecondViewController.swift in Sources */,
 				5F5CCD661C6F46B9002E08D7 /* AppDelegate.swift in Sources */,
+				0CC4824E1C6F4D17000DCEDC /* Usuari.swift in Sources */,
+				0CC482491C6F49B2000DCEDC /* Apunt.swift in Sources */,
+				0CC482521C6F4DFA000DCEDC /* Grau.swift in Sources */,
+				0CC4824C1C6F4A7F000DCEDC /* Comentari.swift in Sources */,
 				5F5CCD681C6F46B9002E08D7 /* FirstViewController.swift in Sources */,
+				0CC482501C6F4D33000DCEDC /* Assignatura.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +355,7 @@
 				5F5CCD781C6F46B9002E08D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
