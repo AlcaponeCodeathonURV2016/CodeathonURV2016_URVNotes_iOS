@@ -13,7 +13,26 @@
 		5F5CCD6D1C6F46B9002E08D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD6B1C6F46B9002E08D7 /* Main.storyboard */; };
 		5F5CCD6F1C6F46B9002E08D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */; };
 		5F5CCD721C6F46B9002E08D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F5CCD701C6F46B9002E08D7 /* LaunchScreen.storyboard */; };
+		5F5CCD7F1C6F479D002E08D7 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7D1C6F479D002E08D7 /* RealmSwift.framework */; };
+		5F5CCD801C6F479D002E08D7 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7D1C6F479D002E08D7 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F5CCD811C6F479D002E08D7 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7E1C6F479D002E08D7 /* Realm.framework */; };
+		5F5CCD821C6F479D002E08D7 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5CCD7E1C6F479D002E08D7 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F5CCD831C6F479D002E08D7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F5CCD821C6F479D002E08D7 /* Realm.framework in Embed Frameworks */,
+				5F5CCD801C6F479D002E08D7 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5F5CCD621C6F46B9002E08D7 /* URVNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URVNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +43,8 @@
 		5F5CCD6E1C6F46B9002E08D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F5CCD711C6F46B9002E08D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F5CCD731C6F46B9002E08D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F5CCD7D1C6F479D002E08D7 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		5F5CCD7E1C6F479D002E08D7 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F5CCD811C6F479D002E08D7 /* Realm.framework in Frameworks */,
+				5F5CCD7F1C6F479D002E08D7 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +63,8 @@
 		5F5CCD591C6F46B9002E08D7 = {
 			isa = PBXGroup;
 			children = (
+				5F5CCD7D1C6F479D002E08D7 /* RealmSwift.framework */,
+				5F5CCD7E1C6F479D002E08D7 /* Realm.framework */,
 				5F5CCD641C6F46B9002E08D7 /* URVNotes */,
 				5F5CCD631C6F46B9002E08D7 /* Products */,
 			);
@@ -77,6 +102,7 @@
 				5F5CCD5E1C6F46B9002E08D7 /* Sources */,
 				5F5CCD5F1C6F46B9002E08D7 /* Frameworks */,
 				5F5CCD601C6F46B9002E08D7 /* Resources */,
+				5F5CCD831C6F479D002E08D7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -254,6 +280,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/URVNotes",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = URVNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alcapone.URVNotes;
@@ -265,6 +296,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/URVNotes",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = URVNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alcapone.URVNotes;
