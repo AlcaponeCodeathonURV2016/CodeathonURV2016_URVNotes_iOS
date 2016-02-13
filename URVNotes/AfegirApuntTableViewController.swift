@@ -8,6 +8,7 @@
 
 import UIKit
 import DKImagePickerController
+import RealmSwift
 
 class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate , UICollectionViewDataSource, UICollectionViewDelegate{
 
@@ -27,9 +28,9 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
         pickerController.didSelectAssets = { (assets: [DKAsset]) in
             self.imatges = assets
             if(self.imatges.count == 0) {
-                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))!.hidden = true
+                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 3))!.hidden = true
             }else{
-                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 1))!.hidden = false
+                self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 3))!.hidden = false
             }
             self.collectionViewImatges.reloadData()
             self.tableView.reloadData()
@@ -125,7 +126,7 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if indexPath.row == 1 && indexPath.section == 1 {
+        if indexPath.row == 1 && indexPath.section == 3 {
             let screenSize: CGRect = UIScreen.mainScreen().bounds
             let height = Int(ceil(Double(self.imatges.count)/4.0))*(Int(screenSize.width)/4)
             return CGFloat(height)
@@ -159,6 +160,36 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBAction func publicate(sender: AnyObject) {
         
+        if(self.imatges.count==0){
+        
+        }
+        
+        let apunt = Apunt(value: ["id":NSUUID().UUIDString,
+            "propietari":current_user,
+            "assignatura":realm.objects(Assignatura)[0],
+            "titol":self.titleTextField.text!,
+            "descripcio":self.descriptionTextArea.text!,
+            "likes": 0,
+            "dislikes": 0,
+            "data": NSDate()])
+        
+        self.imatges.
+        
+        var count = 0
+        for imatge: DKAsset in self.imatges {
+            let apunt = ApuntImatge(value: ["id":NSUUID().UUIDString,
+                "apunt":apunt,
+                "position":count,
+                "nsurlfilemanager":"",
+                "local": true])
+            count++
+        }
+
+        
+        try! realm.write {
+            realm.add(apunt)
+        }
+
     }
 
 }
