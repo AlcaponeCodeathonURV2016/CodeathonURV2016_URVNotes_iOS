@@ -1,30 +1,34 @@
 //
-//  ApuntsListTableViewController.swift
+//  ComentarisListTableViewController.swift
 //  URVNotes
 //
-//  Created by Pau Martín on 13/2/16.
+//  Created by Pau Martín on 14/2/16.
 //  Copyright © 2016 Alcapone. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class ApuntsListTableViewController: UITableViewController {
-    var apunts = realm.objects(Apunt)
+class ComentarisListTableViewController: UITableViewController {
+
+    var comentaris:[Comentari] = []
+    var apunt = Apunt()
+    var comentariTextField:UITextField = UITextField()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        for comment in apunt.comentaris {
+            comentaris.append(comment)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        apunts = realm.objects(Apunt)
     }
-    override func viewWillAppear(animated: Bool) {
-        apunts = realm.objects(Apunt)
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -34,28 +38,54 @@ class ApuntsListTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.apunts.count
+        return 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("apuntTableViewCell", forIndexPath: indexPath) as! ApuntTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("comentariCell", forIndexPath: indexPath)
 
-        let apunt = apunts[indexPath.row]
-        cell.nameLabel.text = apunt.titol
-        cell.authorNameLabel.text = (apunt.propietari?.nom)! + " " + (apunt.propietari?.cognoms)!
-        cell.likesCounterLabel.text = String(apunt.likes)
-        cell.dislikesCounterLabel.text = String(apunt.dislikes)
-        if apunt.imatges.count > 0 {
-            cell.apuntImage.image = UIImage(data: apunt.imatges[0].data)
-        }
-        
+        cell.textLabel?.text = self.comentaris[indexPath.row].descripcio
+        cell.detailTextLabel!.text = self.comentaris[indexPath.row].owner!.nom + " " + self.comentaris[indexPath.row].owner!.cognoms
+
         return cell
+    }
+
+    @IBAction func afegirComentariAction(sender: AnyObject) {
+        
+        let alertController = UIAlertController(title: "Afegir comentari", message: "", preferredStyle: .Alert)
+        let OKAction = UIAlertAction(title: "OK", style: .Default, handler: {
+            alert -> Void in
+            let comentari = Comentari(value: ["id":NSUUID().UUIDString,
+                "owner":current_user,
+                "apunt":self.apunt,
+                "descripcio":String(alertController.textFields![0].text),
+                "likes": 0,
+                "dislikes": 0,
+                "data": NSDate()]);
+            
+            self.apunt.comentaris.append(comentari)
+            
+            try! realm.write {
+                realm.add(self.apunt)
+            }
+            self.tableView.reloadData()
+        })
+        let cancelAction = UIAlertAction(title: "Cancela", style: .Default) { (action) in }
+        alertController.addAction(OKAction)
+        alertController.addAction(cancelAction)
+        alertController.addTextFieldWithConfigurationHandler(addTextField)
+        self.presentViewController(alertController, animated: true) { }
+    }
+    
+    func addTextField(textField: UITextField!){
+        // add the text field and make the result global
+        textField.placeholder = "Comentari"
     }
 
     /*
@@ -66,19 +96,17 @@ class ApuntsListTableViewController: UITableViewController {
     }
     */
 
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            try! realm.write {
-                realm.delete(self.apunts[indexPath.row])
-            }
-            self.apunts = realm.objects(Apunt)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        }
-        self.tableView.reloadData()
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
     }
-
+    */
 
     /*
     // Override to support rearranging the table view.
@@ -95,13 +123,14 @@ class ApuntsListTableViewController: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = tableView.indexPathForSelectedRow!
-        let vc = segue.destinationViewController as! ApuntTableViewController
-        vc.apunt = self.apunts[indexPath.row]
-        vc.title = self.apunts[indexPath.row].titol
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }

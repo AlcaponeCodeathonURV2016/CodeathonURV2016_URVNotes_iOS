@@ -10,7 +10,7 @@ import UIKit
 import DKImagePickerController
 import RealmSwift
 
-class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate , UICollectionViewDataSource, UICollectionViewDelegate{
+class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
 
     let pickerController = DKImagePickerController()
     var imatges = [DKAsset]()
@@ -162,50 +162,52 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBAction func publicate(sender: AnyObject) {
         
-        if(self.imatges.count==0){
-        
+        if(self.imatges.count == 0 || self.titleTextField.text == "" || self.descriptionTextArea.text == "" || self.assignaturaTextField.text == ""){
+            let alertController = UIAlertController(title: "Oops!", message: "Has d'omplir tots els camps", preferredStyle: .Alert)
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in }
+            alertController.addAction(OKAction)
+            self.presentViewController(alertController, animated: true) { }
+        } else {
+            let apunt = Apunt(value: ["id":NSUUID().UUIDString,
+                "propietari":current_user,
+                "assignatura":realm.objects(Assignatura)[0],
+                "titol":self.titleTextField.text!,
+                "descripcio":self.descriptionTextArea.text!,
+                "likes": 0,
+                "dislikes": 0,
+                "data": NSDate()])
+            
+            
+            var count = 0
+            for imatge: DKAsset in self.imatges {
+                imatge.fetchFullScreenImageWithCompleteBlock({ image, info in
+                    let imageData: NSData = UIImagePNGRepresentation(image!)!
+                    let apuntImatge = ApuntImatge(value: ["id":NSUUID().UUIDString,
+                        "apunt":apunt,
+                        "position":count,
+                        "data":imageData,
+                        "local": true])
+                    
+                    try! realm.write {
+                        realm.add(apuntImatge)
+                        apunt.imatges.append(apuntImatge)
+                        count++
+                    }
+                })
+            }
+            
+            
+            try! realm.write {
+                realm.add(apunt)
+            }
+            
+            self.imatges = []
+            self.titleTextField.text=""
+            self.descriptionTextArea.text=""
+            self.titleTextField.text=""
+            
+            self.collectionViewImatges.reloadData()
+            self.tableView.reloadData()
         }
-        
-        let apunt = Apunt(value: ["id":NSUUID().UUIDString,
-            "propietari":current_user,
-            "assignatura":realm.objects(Assignatura)[0],
-            "titol":self.titleTextField.text!,
-            "descripcio":self.descriptionTextArea.text!,
-            "likes": 0,
-            "dislikes": 0,
-            "data": NSDate()])
-        
-        
-        var count = 0
-        for imatge: DKAsset in self.imatges {
-            imatge.fetchFullScreenImageWithCompleteBlock({ image, info in
-                let imageData: NSData = UIImagePNGRepresentation(image!)!
-                let apuntImatge = ApuntImatge(value: ["id":NSUUID().UUIDString,
-                    "apunt":apunt,
-                    "position":count,
-                    "data":imageData,
-                    "local": true])
-                
-                try! realm.write {
-                    realm.add(apuntImatge)
-                    apunt.imatges.append(apuntImatge)
-                    count++
-                }
-            })
-        }
-
-        
-        try! realm.write {
-            realm.add(apunt)
-        }
-        
-        self.imatges = []
-        self.titleTextField.text=""
-        self.descriptionTextArea.text=""
-        self.titleTextField.text=""
-
-        self.collectionViewImatges.reloadData()
-        self.tableView.reloadData()
     }
-
 }
