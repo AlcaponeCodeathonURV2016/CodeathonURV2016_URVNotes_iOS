@@ -6,6 +6,6 @@ use_frameworks!
 target 'URVNotes' do
 
 	pod 'DKImagePickerController'
-
+	pod 'Agrume'
 end
 

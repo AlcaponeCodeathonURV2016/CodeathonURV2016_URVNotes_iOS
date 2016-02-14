@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Agrume
 
 class ApuntTableViewController: UITableViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -71,12 +72,7 @@ class ApuntTableViewController: UITableViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("apuntImatgeCell", forIndexPath: indexPath) as! ImatgeApuntCollectionViewCell
-               print(indexPath.row)
         cell.imageView.image = self.imatges[indexPath.row]
-        
- 
-        
-        
         return cell
     }
     
@@ -84,6 +80,11 @@ class ApuntTableViewController: UITableViewController, UICollectionViewDataSourc
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         return CGSize(width: (screenSize.width/4-1), height: (screenSize.width/4-1));
         
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let agrume = Agrume(images: self.imatges, startIndex: indexPath.row, backgroundBlurStyle: .Light)
+        agrume.showFrom(self)
     }
      
     // MARK: - Navigation

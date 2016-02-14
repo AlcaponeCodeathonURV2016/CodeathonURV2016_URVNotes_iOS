@@ -202,9 +202,10 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
             }
             
             self.imatges = []
-            self.titleTextField.text=""
-            self.descriptionTextArea.text=""
-            self.titleTextField.text=""
+            self.titleTextField.text = ""
+            self.descriptionTextArea.text = ""
+            self.titleTextField.text = ""
+            self.assignaturaTextField.text = ""
             
             self.collectionViewImatges.reloadData()
             self.tableView.reloadData()
