@@ -14,12 +14,8 @@ class ApuntsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        self.tableView.tableFooterView = UIView.init(frame: CGRectZero)
         
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         apunts = realm.objects(Apunt)
     }
     override func viewWillAppear(animated: Bool) {

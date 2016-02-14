@@ -17,6 +17,7 @@ class ComentarisListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView.init(frame: CGRectZero)
     }
 
     override func didReceiveMemoryWarning() {
