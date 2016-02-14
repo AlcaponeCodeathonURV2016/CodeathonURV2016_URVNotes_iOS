@@ -18,9 +18,7 @@ class ComentarisListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for comment in apunt.comentaris {
-            comentaris.append(comment)
-        }
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,7 +31,15 @@ class ComentarisListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        for comment in apunt.comentaris {
+            comentaris.append(comment)
+        }
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -48,9 +54,9 @@ class ComentarisListTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("comentariCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("comentariCell", forIndexPath: indexPath) as UITableViewCell
 
-        cell.textLabel?.text = self.comentaris[indexPath.row].descripcio
+        cell.textLabel!.text = self.comentaris[indexPath.row].descripcio
         cell.detailTextLabel!.text = self.comentaris[indexPath.row].owner!.nom + " " + self.comentaris[indexPath.row].owner!.cognoms
 
         return cell
@@ -69,10 +75,10 @@ class ComentarisListTableViewController: UITableViewController {
                 "dislikes": 0,
                 "data": NSDate()]);
             
-            self.apunt.comentaris.append(comentari)
             
             try! realm.write {
-                realm.add(self.apunt)
+                realm.add(comentari)
+                self.apunt.comentaris.append(comentari)
             }
             self.tableView.reloadData()
         })

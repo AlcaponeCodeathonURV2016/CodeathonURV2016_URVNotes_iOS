@@ -52,6 +52,17 @@ class ApuntTableViewController: UITableViewController, UICollectionViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 && indexPath.section == 2 {
+            let screenSize: CGRect = UIScreen.mainScreen().bounds
+            let height = Int(ceil(Double(self.imatges.count)/4.0))*(Int(screenSize.width)/4)
+            return CGFloat(height)
+        } else if indexPath.row == 0 && indexPath.section == 1 {
+            return 200.0
+        }
+        return 44.0
+    }
+    
     // MARK: - Collection View
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.imatges.count
@@ -60,8 +71,11 @@ class ApuntTableViewController: UITableViewController, UICollectionViewDataSourc
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("apuntImatgeCell", forIndexPath: indexPath) as! ImatgeApuntCollectionViewCell
-        
+               print(indexPath.row)
         cell.imageView.image = self.imatges[indexPath.row]
+        
+ 
+        
         
         return cell
     }
