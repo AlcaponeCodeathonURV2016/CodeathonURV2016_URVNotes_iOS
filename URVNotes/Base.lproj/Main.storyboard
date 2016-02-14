@@ -296,6 +296,7 @@
                                     <outlet property="dislikesCounterLabel" destination="ekQ-Z7-2GG" id="9hv-DA-rBb"/>
                                     <outlet property="likesCounterLabel" destination="LLT-cO-DMf" id="JwN-bs-Y3k"/>
                                     <outlet property="nameLabel" destination="Vsz-jh-vEH" id="QjD-4R-kyo"/>
+                                    <segue destination="nGC-BY-kSj" kind="push" id="7y6-kc-jpr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -305,9 +306,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Els meus apunts" id="o7r-Uu-w2K"/>
-                    <connections>
-                        <segue destination="nGC-BY-kSj" kind="custom" id="KDS-T5-l6f"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxS-2U-kMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -323,7 +321,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="vMt-2m-Goh">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vMt-2m-Goh" id="ZY5-ab-kSS">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -336,6 +334,7 @@
                             <outlet property="delegate" destination="nGC-BY-kSj" id="Txb-QJ-OS5"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="1gu-Ep-LAK"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFp-uF-ati" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

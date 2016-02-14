@@ -100,6 +100,15 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		0C476FB81C70125400978A03 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0C476FB11C6F8E3000978A03 /* ImatgeApuntCollectionViewCell.swift */,
+				0C476FB31C6FE2E400978A03 /* ApuntTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		5F5CCD591C6F46B9002E08D7 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +134,7 @@
 			children = (
 				5F5CCD841C6F4E8A002E08D7 /* ViewController */,
 				5F5CCD651C6F46B9002E08D7 /* AppDelegate.swift */,
-				0C476FB11C6F8E3000978A03 /* ImatgeApuntCollectionViewCell.swift */,
-				0C476FB31C6FE2E400978A03 /* ApuntTableViewCell.swift */,
+				0C476FB81C70125400978A03 /* Cells */,
 				5F5CCD6B1C6F46B9002E08D7 /* Main.storyboard */,
 				0C476FB01C6F789900978A03 /* Model */,
 				0C476FA61C6F788300978A03 /* DataHelper.swift */,

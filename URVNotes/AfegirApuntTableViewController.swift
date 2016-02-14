@@ -130,6 +130,8 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
             let screenSize: CGRect = UIScreen.mainScreen().bounds
             let height = Int(ceil(Double(self.imatges.count)/4.0))*(Int(screenSize.width)/4)
             return CGFloat(height)
+        } else if indexPath.row == 0 && indexPath.section == 1 {
+            return 200.0
         }
         return 44.0
     }
@@ -196,7 +198,14 @@ class AfegirApuntTableViewController: UITableViewController, UITextFieldDelegate
         try! realm.write {
             realm.add(apunt)
         }
+        
+        self.imatges = []
+        self.titleTextField.text=""
+        self.descriptionTextArea.text=""
+        self.titleTextField.text=""
 
+        self.collectionViewImatges.reloadData()
+        self.tableView.reloadData()
     }
 
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class ApuntTableViewController: UITableViewController {
-
+    var apunt = Apunt()
     override func viewDidLoad() {
         super.viewDidLoad()
 
